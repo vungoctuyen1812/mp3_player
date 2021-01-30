@@ -1,0 +1,71 @@
+.audio__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.audio__container::after {
+  content: "";
+  background-image: url("background.jpg");
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+}
+.audio__container > audio {
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+  outline: none;
+}
+.audio__circle {
+  animation: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  height: 20rem;
+  width: 20rem;
+  margin: 5rem;
+}
+.audio__circle > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50rem;
+  object-fit: cover;
+}
+.audio__list {
+  display: flex;
+}
+.audio__list > i {
+  color: white;
+  margin: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

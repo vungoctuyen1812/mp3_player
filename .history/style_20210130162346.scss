@@ -1,0 +1,163 @@
+
+.audio{
+    &__container{
+        position: relative;
+        &::after{
+            content: '';
+            background-image: url('background.jpg');
+            content: "";
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            display: block;
+            background-size:cover;
+            width: 100%;
+            height: 100%;
+
+            -webkit-filter: blur(8px);
+            -moz-filter: blur(8px);
+            -o-filter: blur(8px);
+            -ms-filter: blur(8px);
+            filter: blur(8px);
+        }
+
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        
+        & > audio {
+                filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+                outline: none;
+        }
+    }
+    &__circle{
+        & > img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50rem;
+            
+        }
+        
+        animation-duration: infinite;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-play-state: paused;
+        height: 35rem;
+        width: 35rem;
+        margin: 5rem;
+        
+    }
+    &__song{
+        color: rgb(255, 255, 255);
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+    &__singer{
+        color: rgb(195, 192, 192);
+        font-size: 2rem;
+    }
+    &__list{
+        display: flex;
+        & > i {
+            
+            color: rgb(109, 109, 109);
+            margin: 2rem;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                color: rgb(255, 255, 255);
+                transform: scale(1.2);
+            }
+        }
+
+    }
+    &__time{
+        color: white;
+        font-size: 2.5rem;
+        width: 30%;
+        position: relative;
+        margin: 3rem;
+    }
+    &__seekbar{
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+
+        &::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            border: 1px solid #000000;
+            height: 3rem;
+            width: 1rem;
+            border-radius: 5rem;
+            background: #ffffff;
+            cursor: pointer;
+            margin-top: -1rem; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+            box-shadow: 1px 1px 1px #000000, 1px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+        }
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 1rem;
+            cursor: pointer;
+            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+            background: #999999;
+            border-radius: 1.3px;
+            border: 0.2px solid #010101;
+        }
+            
+        &:focus::-webkit-slider-runnable-track {
+            background: #999999;
+        }
+        &:focus{
+            outline: none;
+        }
+
+        &::-ms-track{
+            width: 100%;
+            cursor: pointer;
+
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+    }
+    &__currentTime{
+        position: absolute;
+        top: 0.5rem;
+        left: -10rem;
+        
+    }
+    &__duration{
+        position: absolute;
+        top: 0.5rem;
+        right: -10rem;
+    }
+}
+
+@keyframes spin {
+    0% {
+        opacity: 1;
+        transform:rotate(0deg);
+    }
+    25%{
+        opacity: 0.5;
+        transform:rotate(90deg);
+    }
+    50%{
+        opacity: 1;
+        transform:rotate(180deg);
+    }
+    75%{
+        opacity: 0.5;
+        transform:rotate(270deg);
+    }
+    100% {
+        opacity: 1;
+        transform:rotate(360deg);
+    }
+}

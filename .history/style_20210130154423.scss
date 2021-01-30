@@ -1,0 +1,133 @@
+
+.audio{
+    &__container{
+        position: relative;
+        &::after{
+            content: '';
+            background-image: url('background.jpg');
+            content: "";
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            display: block;
+            background-size:cover;
+            width: 100%;
+            height: 100%;
+
+            -webkit-filter: blur(8px);
+            -moz-filter: blur(8px);
+            -o-filter: blur(8px);
+            -ms-filter: blur(8px);
+            filter: blur(8px);
+        }
+
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        
+        & > audio {
+                filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+                outline: none;
+        }
+    }
+    &__circle{
+        & > img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50rem;
+            object-fit: cover;
+        }
+        
+        animation-duration: 10000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-play-state: paused;
+        height: 20rem;
+        width: 20rem;
+        margin: 5rem;
+        
+    }
+    &__list{
+        display: flex;
+        & > i {
+            color: white;
+            margin: 2rem;
+            font-size: 4rem;
+            cursor: pointer;
+        }
+
+    }
+    &__time{
+        display: flex;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        & > input[type=range]{
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+
+            &::-webkit-slider-thumb{
+                -webkit-appearance: none;
+                border: 1px solid #000000;
+                height: 3rem;
+                width: 1rem;
+                border-radius: 5rem;
+                background: #ffffff;
+                cursor: pointer;
+                margin-top: -1rem; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                box-shadow: 1px 1px 1px #000000, 1px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+            }
+            &::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 1rem;
+                cursor: pointer;
+                box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+                background: #000000;
+                border-radius: 1.3px;
+                border: 0.2px solid #010101;
+            }
+              
+            &:focus::-webkit-slider-runnable-track {
+                background: #367ebd;
+            }
+            &:focus{
+                outline: none;
+            }
+
+            &::-ms-track{
+                width: 100%;
+                cursor: pointer;
+
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
+        }
+
+        
+
+
+    }
+}
+
+@keyframes spin {
+    0% {
+        opacity: 1;
+        
+    }
+    50%{
+        opacity: 0.5;
+        transform:rotate(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform:rotate(360deg);
+    }
+}

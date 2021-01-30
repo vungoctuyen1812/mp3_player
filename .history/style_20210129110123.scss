@@ -1,0 +1,16 @@
+.audio{
+    &__container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &__list{
+        display: flex;
+    }
+    & > i {
+        font-size: 5rem;
+    }
+}

@@ -1,0 +1,26 @@
+.audio{
+    &__container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        
+        & > audio {
+            
+                filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+                width: 200px;
+                height: 25px;
+            
+        }
+    }
+    &__list{
+        display: flex;
+        & > i {
+            margin: 2rem;
+            font-size: 3rem;
+        }
+
+    }
+}

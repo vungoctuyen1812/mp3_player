@@ -1,0 +1,151 @@
+.audio__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.audio__container::after {
+  content: "";
+  background-image: url("background.jpg");
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.audio__container > audio {
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+  outline: none;
+}
+.audio__circle {
+  animation-duration: infinite;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  height: 35rem;
+  width: 35rem;
+  margin: 5rem;
+}
+.audio__circle > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50rem;
+  object-fit: cover;
+}
+.audio__song {
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+.audio__singer {
+  color: #c3c0c0;
+  font-size: 2rem;
+}
+.audio__list {
+  display: flex;
+}
+.audio__list > i {
+  color: #6d6d6d;
+  margin: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.audio__list > i:hover {
+  color: white;
+  transform: scale(1.2);
+}
+.audio__time {
+  color: white;
+  font-size: 2.5rem;
+  width: 30%;
+  position: relative;
+  margin: 3rem;
+}
+.audio__seekbar {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+.audio__seekbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 3rem;
+  width: 1rem;
+  border-radius: 5rem;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -1rem;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 1px 0px 1px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
+.audio__seekbar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #999999;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+.audio__seekbar:focus::-webkit-slider-runnable-track {
+  background: #999999;
+}
+.audio__seekbar:focus {
+  outline: none;
+}
+.audio__seekbar::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.audio__currentTime {
+  position: absolute;
+  top: 0.5rem;
+  left: -10rem;
+}
+.audio__duration {
+  position: absolute;
+  top: 0.5rem;
+  right: -10rem;
+}
+
+@keyframes spin {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  25% {
+    opacity: 0.25;
+    transform: rotate(90deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate(180deg);
+  }
+  75% {
+    opacity: 0.25;
+    transform: rotate(270deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

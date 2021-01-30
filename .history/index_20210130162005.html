@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Mp3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="audio__container">
+        <div class="audio__circle" id="circleBanner">
+            <img src="circleImage.jpg" alt="">
+        </div>
+        <h3>Đom Đóm</h3>
+        <h6>Jack</h6>
+        <audio src="test.mp3" type="audio/mpeg" id="playedAudio"></audio>
+        <div class="audio__time">
+            <span class="audio__currentTime">0:0</span>
+            <input type="range" step="1" class="audio__seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
+            <span class="audio__duration">0:0</span>
+        </div>
+        <div class="audio__list">
+            <i class="fa fa-play-circle" aria-hidden="true" id="playBtn"></i>
+            <i class="fa fa-pause-circle" aria-hidden="true" id="pauseBtn"></i>
+            <i class="fa fa-stop-circle" aria-hidden="true" id="stopBtn"></i>
+            <i class="fa fa-forward" aria-hidden="true" id="forwardBtn"></i>
+            <i class="fa fa-backward" aria-hidden="true" id="backwardBtn"></i>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
